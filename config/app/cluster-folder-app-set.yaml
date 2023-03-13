@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-specific
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: in-cluster
+        url: https://kubernetes.default.svc
+      - cluster: minikube
+        url: https://192.168.49.2:8443
+      - cluster: cluster1
+        url : https://192.168.58.2:8443
+  template:
+    metadata:
+      name: '{{cluster}}-app-of-apps'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/msm17b019/argocd-test.git
+        targetRevision: main
+        path: config/{{cluster}}
+      destination:
+        server: '{{url}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
