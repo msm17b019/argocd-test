@@ -5,25 +5,18 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - list:
-      elements:
-      - cluster: in-cluster
-        url: https://kubernetes.default.svc
-      - cluster: minikube
-        url: https://kubernetes.default.svc
-      - cluster: cluster1
-        url: https://kubernetes.default.svc
+  - clusters: {}
   template:
     metadata:
-      name: '{{cluster}}-app-of-apps'
+      name: '{{name}}-app-of-apps'
     spec:
       project: default
       source:
         repoURL: https://github.com/msm17b019/argocd-test.git
         targetRevision: main
-        path: config/{{cluster}}/template
+        path: config/{{name}}/template
       destination:
-        server: '{{url}}'
+        server: https://kubernetes.default.svc
       syncPolicy:
         automated:
           prune: true
