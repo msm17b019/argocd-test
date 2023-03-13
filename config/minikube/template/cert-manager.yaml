@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager-minikube-12345678
+  name: cert-manager-minikube
   namespace: argocd
 spec:
   project: default
