@@ -12,7 +12,7 @@ spec:
       - cluster: minikube
         url: https://192.168.49.2:8443
       - cluster: cluster1
-        url : https://192.168.58.2:8443
+        url: https://192.168.58.2:8443
   template:
     metadata:
       name: '{{cluster}}-app-of-apps'
