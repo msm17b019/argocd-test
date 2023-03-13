@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: postgresql-cluster1
+  name: mongodb-abc-xyz-k8s-test-87654321
   namespace: argocd
 spec:
   project: default
   source:
-    chart: postgresql
+    chart: mongodb
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 12.2.2
+    targetRevision: 13.9.0
     helm:
-      releaseName: test-postgresql
+      releaseName: test-mongodb
   destination:
     server: https://192.168.58.2:8443
-    namespace: postgresql
+    namespace: database
   syncPolicy:
     automated:
       prune: true
