@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-cluster1
+  name: mongodb-cluster1
   namespace: argocd
 spec:
   project: default
   source:
-    chart: nginx
+    chart: mongodb
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 13.2.29
+    targetRevision: 13.9.0
     helm:
-      releaseName: test-nginx
+      releaseName: test-mongodb
   destination:
     server: https://192.168.58.2:8443
-    namespace: ingress-nginx
+    namespace: database
   syncPolicy:
     automated:
       prune: true

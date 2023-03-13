@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-minikube
+  name: mongodb-in-cluster
   namespace: argocd
 spec:
   project: default
   source:
-    chart: nginx
+    chart: mongodb
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 13.2.29
+    targetRevision: 13.9.0
     helm:
-      releaseName: test-nginx
+      releaseName: test-mongodb
   destination:
-    server: https://192.168.49.2:8443
-    namespace: ingress-nginx
+    server: https://kubernetes.default.svc
+    namespace: database
   syncPolicy:
     automated:
       prune: true
