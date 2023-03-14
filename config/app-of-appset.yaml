@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/msm17b019/argocd-test.git
     targetRevision: main
-    path: config/app
+    path: config/appset
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
