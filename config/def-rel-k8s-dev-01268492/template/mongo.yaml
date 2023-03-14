@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mongodb-def-rel-k8s-dev-01268492
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: mongodb
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 13.9.0
+    helm:
+      releaseName: test-mongodb
+  destination:
+    server: https://192.168.49.2:8443
+    namespace: database
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
