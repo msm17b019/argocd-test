@@ -1,3 +1,5 @@
+# This applicationset template uses cluster generator that deploys all the applications defined in template folder of each cluster-specific directory.
+
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:

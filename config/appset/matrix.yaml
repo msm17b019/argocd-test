@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-git
+spec:
+  generators:
+    - matrix:
+        generators:
+          - git:
+              repoURL: https://github.com/msm17b019/argocd-test.git
+              revision: main
+              directories:
+              - path: config/clusters/*
+          - clusters:
+              selector:
+                matchLabels:
+                  argocd.argoproj.io/secret-type: cluster
+                  argocd.argoproj.io/cluster-name: '{{path.basename}}'
+  template:
+    metadata:
+      name: '{{path.basename}}-app-of-apps'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/msm17b019/argocd-test
+        targetRevision: main
+        path: "config/clusters/{{path.basename}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd

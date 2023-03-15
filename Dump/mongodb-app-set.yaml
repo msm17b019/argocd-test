@@ -1,3 +1,5 @@
+# This ApplicationSet uses list generators to deploy mongodb helm charts in all listed clusters.
+
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:

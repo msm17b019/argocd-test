@@ -1,3 +1,5 @@
+#This application will keep watching for any application files that comes in appset folder.
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -11,6 +13,7 @@ spec:
     path: config/appset
   destination:
     server: https://kubernetes.default.svc
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
