@@ -1,7 +1,7 @@
 ---
 kind: Application
 metadata:
-  name: mongodb-abc-xyz-k8s-test-87654321
+  name: mongodb
 spec:
   source:
     targetRevision: 13.9.0
@@ -13,7 +13,7 @@ spec:
 ---
 kind: Application
 metadata:
-  name: postgresql-abc-xyz-k8s-test-87654321
+  name: postgresql
 spec:
   source:
     targetRevision: 12.2.2
@@ -25,7 +25,7 @@ spec:
 ---
 kind: Application
 metadata:
-  name: sealed-secret-def-rel-k8s-dev-01268492
+  name: sealed-secret
 spec:
   source:
     targetRevision: 2.8.0

@@ -1,7 +1,9 @@
 ---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mongodb-abc-xyz-k8s-test-87654321
+  name: mongodb
+  namespace: argocd
 spec:
   source:
     targetRevision: 13.9.0
@@ -11,9 +13,11 @@ spec:
     server: https://192.168.58.2:8443
     namespace: db
 ---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: postgresql-abc-xyz-k8s-test-87654321
+  name: postgresql
+  namespace: argocd
 spec:
   source:
     targetRevision: 12.2.2
@@ -23,9 +27,11 @@ spec:
     server: https://192.168.58.2:8443
     namespace: postgres
 ---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sealed-secret-def-rel-k8s-dev-01268492
+  name: sealed-secret
+  namespace: argocd
 spec:
   source:
     targetRevision: 2.7.6
