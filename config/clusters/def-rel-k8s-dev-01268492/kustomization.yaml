@@ -7,3 +7,5 @@ resources:
   
 patchesStrategicMerge:
   - "override.yaml"
+
+nameSuffix: "01268492"
