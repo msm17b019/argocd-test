@@ -8,4 +8,4 @@ resources:
 patchesStrategicMerge:
   - "override.yaml"
 
-nameSuffix: "01268492"
+nameSuffix: "-def-rel-k8s-dev-01268492"

@@ -8,4 +8,4 @@ resources:
 patchesStrategicMerge:
   - "override.yaml"
 
-nameSuffix: "87654321"
+nameSuffix: "-abc-xyz-k8s-test-87654321"
