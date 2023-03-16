@@ -10,8 +10,8 @@ spec:
           - git:
               repoURL: https://github.com/msm17b019/argocd-test.git
               revision: main
-              directories:
-              - files: config/environment/clusters/*/apps/*/config.json
+              files:
+              - path: config/environment/clusters/*/apps/*/config.json
           - clusters:
               selector:
                 matchLabels:
