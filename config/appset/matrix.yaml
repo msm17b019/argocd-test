@@ -11,7 +11,7 @@ spec:
               repoURL: https://github.com/msm17b019/argocd-test.git
               revision: main
               directories:
-              - path: config/clusters/*
+              - path: config/environment/clusters/*
           - clusters:
               selector:
                 matchLabels:
@@ -25,7 +25,7 @@ spec:
       source:
         repoURL: https://github.com/msm17b019/argocd-test
         targetRevision: main
-        path: "config/clusters/{{path.basename}}"
+        path: "config/environment/clusters/{{path.basename}}"
       destination:
         server: https://kubernetes.default.svc
         namespace: argocd
