@@ -1,0 +1,7 @@
+{
+    "chart": {
+        "name": "vault",
+        "repoUrl": "https://helm.releases.hashicorp.com",
+        "version": "0.23.0"
+    }
+}

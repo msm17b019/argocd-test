@@ -1,0 +1,8 @@
+server:
+  enabled: true
+  logLevel: "warn"
+
+  image:
+    repository: "hashicorp/vault"
+    tag: "1.12.4"
+    pullPolicy: IfNotPresent
