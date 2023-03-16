@@ -19,7 +19,7 @@ spec:
                   argocd.argoproj.io/cluster-name: '{{path[3]}}'
   template:
     metadata:
-      name: '{{path[3]}}-app-of-apps'
+      name: '{{path[3]}}'
     spec:
       project: default
       source:
