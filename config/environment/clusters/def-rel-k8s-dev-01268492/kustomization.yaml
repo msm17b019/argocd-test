@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-  - "../../base/"
+  - "../../../base/"
   
 patchesStrategicMerge:
   - "override.yaml"
