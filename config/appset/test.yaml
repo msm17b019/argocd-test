@@ -11,7 +11,7 @@ spec:
               repoURL: https://github.com/msm17b019/argocd-test.git
               revision: main
               files:
-              - path: config/environment/clusters/*/apps/vault/config.json
+              - path: config/environment/clusters/*/apps/*/config.json
           - clusters:
               selector:
                 matchLabels:
