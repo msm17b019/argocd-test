@@ -23,16 +23,16 @@ spec:
     spec:
       project: default
       source:
-        chart: {{chart.name}}
-        repoURL: {{chart.repoUrl}}
-        targetRevision: {{chart.version}}
+        chart: '{{chart.name}}'
+        repoURL: '{{chart.repoUrl}}'
+        targetRevision: '{{chart.version}}'
         helm:
           releaseName: sealed-secrets
           valueFiles:
           - config/environment/clusters/{{path[3]}}/apps/path{{[5]}}/values.yaml
       destination:
-        server: {{server}}
-        namespace: {{path.basename}}
+        server: '{{server}}'
+        namespace: '{{path.basename}}'
       syncPolicy:
         automated:
           prune: true
